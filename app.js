@@ -24,14 +24,14 @@ function showPosition(position) {
             const location = weatherData.name
             const weatherText = weatherData.weather[0].description
             let tempSwap = true;
-            $("#location").html("The temperature in " + location + " is... " + celcius + "<button id='tempChange' class='btn bg-transparent cel'>°C</button>" + "and it is like " + weatherText )
+            $("#location").html("The temperature in " + location + "<br> is " + celcius + "<button id='tempChange' class='btn bg-transparent cel'>°C</button>" + "and it is like <br>" + weatherText )
             $("#tempChange").click(function(){
                 if(tempSwap == false){
-                    $("#location").html("The temperature in " + location + " is... " + celcius + "<button id='tempChange' class='btn bg-transparent'>°C</button>" + "and it is like " + weatherText )   
+                    $("#location").html("The temperature in " + location + "<br> is " + celcius + "<button id='tempChange' class='btn bg-transparent'>°C</button>" + "and it is like <br>" + weatherText )   
                     tempSwap = true;  
                  }
                  else{
-                    $("#location").html("The temperature in " + location + " is... " + farenheight + "<button id='tempChange' class='btn bg-transparent cel'>°F</button>" + "and it is like " + weatherText )
+                    $("#location").html("The temperature in " + location +  "<br> is "  + farenheight + "<button id='tempChange' class='btn bg-transparent cel'>°F</button>" + "and it is like <br>" + weatherText )
                     tempSwap=false;
                  }
             });
@@ -48,31 +48,3 @@ $("button").click(function() {
     getLocation();
     $("#buttons").append("<img id='weatherIcon' src='' alt='weather logo'>");
 })
-
-
-
-
-// //$("#tempChange").click(function(){
-            //     // $(this).text($(this).text() == 'Show Div' ? 'Hide Dive' : 'Show Div');
-            //     // $(this).text($(this).text() == $("#location").html("The temperature in " + location + " is... " + farenheight + "<button id='tempChange' class='btn bg-transparent'>*F</button>" + "and it is like " + weatherText ) ? $("#location").html("The temperature in " + location + " is... " + celcius + "<button id='tempChange' class='btn bg-transparent'>*C</button>" + "and it is like " + weatherText ) : $("#location").html("The temperature in " + location + " is... " + farenheight + "<button id='tempChange' class='btn bg-transparent'>*F</button>" + "and it is like " + weatherText ));
-            // //});
-            // // $('#tempChange').click(function(){
-            // //     var $this = $(this);
-            // //     $this.toggleClass('tempChange');
-            // //     if($this.hasClass('tempChange')){
-            // //         $("#location").html("The temperature in " + location + " is... " + farenheight + "<button id='tempChange' class='btn bg-transparent'>*F</button>" + "and it is like " + weatherText )   
-            // //     } else {
-            // //         $("#location").html("The temperature in " + location + " is... " + celcius + "<button id='tempChange' class='btn bg-transparent'>*C</button>" + "and it is like " + weatherText )
-            // //     }
-            // // });
-            // $("#tempChange").click(function() {
-            //     $("#panel").slideToggle("slow");
-            //     console.log(this);
-            //     $(this).toggleClass("active");
-            
-            //     if ($(this).html())
-            //        $(this).text("*F")
-            //     else
-            //        $(this).text("*C");
-            
-            // });
