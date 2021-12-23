@@ -23,17 +23,21 @@ function showPosition(position) {
             const farenheight = Math.floor((weatherData.main.temp * 1.8) + 32);
             const location = weatherData.name
             const weatherText = weatherData.weather[0].description
-            let tempSwap = true;
-            $("#location").html("The temperature in " + location + "<br> is " + celcius + "<button id='tempChange' class='btn bg-transparent cel'>°C</button>" + "and it is like <br>" + weatherText )
+            $("#location").html("The temperature in " + location + " is... <span id='tmpValue'>" + celcius + "</span><button id='tempChange' class='btn bg-transparent cel'>°C</button>" + "and it is like " + weatherText )
+            let isFarenheight = false
+            const element = document.getElementById("tmpValue")
+            const btn = document.getElementById("tempChange")
             $("#tempChange").click(function(){
-                if(tempSwap == false){
-                    $("#location").html("The temperature in " + location + "<br> is " + celcius + "<button id='tempChange' class='btn bg-transparent'>°C</button>" + "and it is like <br>" + weatherText )   
-                    tempSwap = true;  
-                 }
-                 else{
-                    $("#location").html("The temperature in " + location +  "<br> is "  + farenheight + "<button id='tempChange' class='btn bg-transparent cel'>°F</button>" + "and it is like <br>" + weatherText )
-                    tempSwap=false;
-                 }
+                if(isFarenheight) {
+                    element.innerHTML = celcius;
+                    btn.innerHTML = "°C"
+                    isFarenheight = false;
+                }
+                else {
+                    element.innerHTML = farenheight;
+                    btn.innerHTML = "°F"
+                    isFarenheight = true;
+                }
             });
             // Weather Icon 
             const weatherImage = weatherData.weather[0].icon;
