@@ -51,4 +51,5 @@ function showPosition(position) {
 $("button").click(function() {
     getLocation();
     $("#buttons").append("<img id='weatherIcon' src='' alt='weather logo'>");
+    $("#button").prop('disabled', true);
 })
